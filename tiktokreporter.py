@@ -66,7 +66,6 @@ def ask_proxy():
     proxy_list = []
     while True:
         try:
-            # Kullanıcıdan birden çok seçenek al
             choices = input(colored(f"{Basics.get_timestamp()} Select proxy options (e.g.[space] 1 2 for multiple):\n"
                             "1. Default (Proxyscrape)\n"
                             "2. GitHub Free Proxy List\n"
@@ -121,7 +120,6 @@ def ask_proxy():
                 else:
                     print(colored(f"{Basics.get_timestamp()} Invalid choice: {choice}. Skipping.","yellow"))
 
-            # Proxy formatını düzelt
             proxy_list = [proxy if proxy.startswith("http://") or proxy.startswith("https://")
                           else f"http://{proxy}" for proxy in proxy_list]
 
